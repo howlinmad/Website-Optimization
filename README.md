@@ -20,3 +20,10 @@ Optimize Frames per Second in pizza.html<br />
 4) Moved var pizzaDiv = document.getElementById("randomPizzas") out of for loop<br />
 5) Reduced the number of pizzas that appear in the background by using window.innerHeight and window.innerWidth<br />
 6) Commmented changes in main.js<br />
+
+ngrok and python server instructions to pass website into PageSpeed Insights using local files
+1) make sure ngrok.exe is in the same folder as index.html and that python is properly downloaded to you PC. 
+2) Open two command line windows (cmd). 
+3) In the first window navigate to the project folder and write "python -m SimpleHTTPServer 8080" without quotes to run local server.
+4) In the other cmd navigate to the project folder and write "ngrok http 8080" without quotes. 
+5) Copy the "Forwarding" line value and paste it into PageSpeed Insights. The address will look something like this: http://55cae465.ngrok.io
