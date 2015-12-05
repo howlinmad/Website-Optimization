@@ -18,9 +18,11 @@ Optimize Frames per Second in pizza.html<br />
 3) Moved variables out of loop for changePizzaSizes function, changed querySelectorAll to getElementByClassName, 
     and changed number of loop iterations. <br />
 4) Moved var pizzaDiv = document.getElementById("randomPizzas") out of for loop<br />
-5) Reduced the number of pizzas that appear in the background by using window.innerHeight and window.innerWidth<br />
-6) Commmented changes in main.js<br />
-7) Added hardware accelerated CSS by adding transform: tranlateZ(0) and backface-visibility: hidden to .mover <be />
+5) Moved variable declarations outside of the for loop that creates the pizza images.<br /> 
+6) Changed querySelector('#movingPizzas1') to getElementById(movingPizzas1')<br />
+7) Reduced the number of pizzas that appear in the background by using window.innerHeight and window.innerWidth<br />
+8) Commmented changes in main.js<br />
+9) Added hardware accelerated CSS by adding transform: tranlateZ(0) and backface-visibility: hidden to .mover <be />
 
 ngrok and python server instructions to pass website into PageSpeed Insights using local files<br />
 1) make sure ngrok.exe is in the same folder as index.html and that python is properly downloaded to you PC.<br /> 
