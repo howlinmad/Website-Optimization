@@ -425,7 +425,7 @@ var resizePizzas = function(size) {
   function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
     //changed to document.getElementById instead of document.querySelector  
-    var windowwidth = document.getElementById("randomPizzas").offsetWidth;
+    var windowWidth = document.getElementById("randomPizzas").offsetWidth;
     var oldSize = oldWidth / windowWidth;
 
     // TODO: change to 3 sizes? no more xl?
@@ -537,17 +537,21 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-    //reduced number of pizzas on the screen. 
+  //moved declaration of elem outside of loop. 
+  var elem; 
+  //moved document.querySelector outside of loop and changed it to getElementById.    
+  var movingPizzas = document.getElementById('movingPizzas1');    
+  //reduced number of pizzas on the screen. 
   var numOfPizzasToFillScreen = (window.innerHeight / 75) + (window.innerWidth / 75);    
   for (var i = 0; i < numOfPizzasToFillScreen; i++) {
-    var elem = document.createElement('img');
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    movingPizzas.appendChild(elem);
   }
   updatePositions();
 });
