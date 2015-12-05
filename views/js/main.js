@@ -451,7 +451,7 @@ var resizePizzas = function(size) {
   
   // Moved variables out of loop. 
   // changed from document.querySelectorAll
-  var pizzaContainers = document.getElementByClassName("randomPizzaContainer"); 
+  var pizzaContainers = document.getElementsByClassName("randomPizzaContainer"); 
   var Len = pizzaContainers.length;
   var dx = determineDx(pizzaContainers[0], size);
   var newwidth = (pizzaContainers[0].offsetWidth + dx) + 'px';
@@ -509,11 +509,15 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
-  var items = document.querySelectorAll('.mover');
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+  //move variables out of loop and called phase fewer times. 
+  var items = document.getElementsByClassName('mover');
+  var phase = [];   
+  for(var i = 0; i < 5; i++) {
+    phase[i] = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    //console.log(phase);
+  }    
+  for (var i = 0; i < items.length; i++) {   
+    items[i].style.left = items[i].basicLeft + 100 * phase[i%5] + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
