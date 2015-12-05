@@ -22,7 +22,7 @@ Optimize Frames per Second in pizza.html<br />
 6) Changed querySelector('#movingPizzas1') to getElementById(movingPizzas1')<br />
 7) Reduced the number of pizzas that appear in the background by using window.innerHeight and window.innerWidth<br />
 8) Commmented changes in main.js<br />
-9) Added hardware accelerated CSS by adding transform: tranlateZ(0) and backface-visibility: hidden to .mover <be />
+9) Added hardware accelerated CSS by adding transform: tranlateZ(0) and backface-visibility: hidden to .mover in views/css/style.css<be />
 
 ngrok and python server instructions to pass website into PageSpeed Insights using local files<br />
 1) make sure ngrok.exe is in the same folder as index.html and that python is properly downloaded to you PC.<br /> 
